@@ -1,0 +1,27 @@
+server:
+  port: 8014
+spring:
+  application:
+    name: upkm 优先级为3，从nacos配置文件中查找对应的配置文件并加载到当前上下文中
+#  profiles:
+#    active: test
+  cloud:
+    nacos:
+      discovery:
+
+        server-addr: 127.0.0.1:8849  # 服务注册的地址
+      config:
+        file-extension: yaml #设置配置文件的格式
+        #prefix: kxuu1  优先级为1，从nacos配置文件中查找对应的配置文件并加载到当前上下文中
+        #name: upkm2 优先级为2，从nacos配置文件中查找对应的配置文件并加载到当前上下文中
+
+    #        refresh-enabled: true
+    loadbalancer:
+      nacos:
+        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: '*'
+

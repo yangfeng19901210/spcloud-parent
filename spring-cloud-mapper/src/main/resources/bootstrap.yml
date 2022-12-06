@@ -1,0 +1,16 @@
+server:
+  port: 8019
+spring:
+  application:
+    name: spcloud-mapper # 定义服务名称
+  profiles:
+    active: dev # 定义开发环境
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8849 # 定义nacos 服务注册的地址
+      config:
+        file-extension: yml # 定义读取nacos中读取的配置文件的格式
+        server-addr: 127.0.0.1:8849
+
